@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>BETBOMZH</title>
+  <title>BETBOMZH - лудоман №1</title>
 
   <link rel="icon" href="favicon.png" type="image/png">
 
@@ -352,6 +352,43 @@
   color: #ff7a00;
   font-weight: 700;
 }
+
+@keyframes titleBreath {
+  0% {
+    transform: translateX(-50%) scale(1);
+    text-shadow: 0 0 10px rgba(255,122,0,0.35);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.03);
+    text-shadow: 0 0 25px rgba(255,122,0,0.75);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+    text-shadow: 0 0 10px rgba(255,122,0,0.35);
+  }
+}
+
+.hero {
+  position: relative;
+}
+
+h1 {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+
+  font-size: 48px;
+  font-weight: 900;
+  color: #ff7a00;
+  text-shadow: 0 0 20px rgba(255,170,0,0.45);
+
+  animation: titleBreath 3.5s ease-in-out infinite;
+}
+
   </style>
 </head>
 <body>
@@ -361,7 +398,7 @@
     <section class="hero">
       <div class="logo"></div>
 
-      <h1 style="margin-top:10px; margin-bottom:18px; position:absolute; top:10px; left:50%; transform:translateX(-50%); width:100%; text-align:center; z-index:2;">BETBOMZH</h1>
+      <h1>BETBOMZH</h1>
 
       <div class="subtitle">
         🌴 То Мальдивы, то подвал — снова банк весь проебал! 💵
@@ -388,16 +425,6 @@
 </div>
     </section>
 
-      <div class="socials">
-        <a href="#" class="social-btn telegram">Telegram</a>
-        <a href="#" class="social-btn">YouTube</a>
-        <a href="#" class="social-btn">TikTok</a>
-        <a href="#" class="social-btn">Instagram</a>
-        <a href="#" class="social-btn">Facebook</a>
-      </div>
-    </section>
-
-  
 
     <section class="bookmakers">
       <h2 class="section-title">Ставь здесь, заебал</h2>
@@ -427,7 +454,14 @@
       </div>
     </section>
 
-    
+    <div class="socials">
+        <a href="#" class="social-btn telegram">Telegram</a>
+        <a href="#" class="social-btn">YouTube</a>
+        <a href="#" class="social-btn">TikTok</a>
+        <a href="#" class="social-btn">Instagram</a>
+        <a href="#" class="social-btn">Facebook</a>
+      </div>
+    </section>
 
     <footer>
       <h3>BETBOMZH</h3>
