@@ -494,6 +494,28 @@ h1 {
   text-align: center;
   font-size: 14px;
 }
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.85);
+  color: #ff7a00;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+  z-index: 99999;
+  border: 1px solid rgba(255,122,0,0.3);
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-10px);
+}
   </style>
 </head>
 <head>
@@ -655,10 +677,14 @@ window.onclick = function(e) {
 }
 
 function copyWallet(id) {
-  const text = document.getElementById(id).innerText;
-  navigator.clipboard.writeText(text);
-  alert("Благодарочка братик!");
+  const toast = document.getElementById("toast");
+toast.classList.add("show");
+
+setTimeout(() => {
+  toast.classList.remove("show");
+}, 1500);
 }
 </script>
+<div id="toast" class="toast">Скопировано! Дай Бог тебе здоровья! 😉</div>
 </body>
 </html>
