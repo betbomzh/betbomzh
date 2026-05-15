@@ -419,7 +419,65 @@ h1 {
 
   animation: titleBreath 3.5s ease-in-out infinite;
 }
+/* MODAL BACKGROUND */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(6px);
+}
 
+/* MODAL BOX */
+.modal-content {
+  background: #18110a;
+  color: white;
+  width: 90%;
+  max-width: 420px;
+  margin: 10% auto;
+  padding: 25px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,122,0,0.3);
+  box-shadow: 0 0 40px rgba(255,122,0,0.2);
+  position: relative;
+}
+
+/* CLOSE BUTTON */
+.close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #ff7a00;
+}
+
+/* BLOCKS */
+.donate-method {
+  margin-top: 15px;
+  padding: 15px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  background: rgba(0,0,0,0.2);
+}
+
+.donate-method button,
+.donate-method a {
+  margin-top: 10px;
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: #ff7a00;
+  color: black;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
   </style>
 </head>
 <head>
@@ -475,7 +533,8 @@ h1 {
 <section class="donate">
       <h2>Сбор на хату</h2>
       <p>🤯 Поставил на коэф. 1.01 свою однокомнатную виллу в Монако и теперь я ебаный бомж! </p>
-      <a href="#" class="donate-btn">Задонать, не будь жлобом </a>
+      <a href="javascript:void(0)" class="donate-btn" id="openDonate">
+  Задонать, не будь жлобом</a>
 	  <div class="progress-box">
 
   <div class="progress-bar"></div>
@@ -525,6 +584,67 @@ h1 {
     </footer>
 
   </div>
+<div id="donateModal" class="modal">
+  <div class="modal-content">
 
+    <span class="close">&times;</span>
+
+    <h2>Поддержать Бет Бомжа</h2>
+
+    <div class="donate-method">
+      <h3>💰 USDT</h3>
+      <p class="wallet-label">BEP20</p>
+
+      <button onclick="copyWallet('usdt')">Скопировать адрес</button>
+
+      <span id="usdt" style="display:none;">0x3a02f143fe426ca151f3f6a5701734c8aa9c263f</span>
+    </div>
+
+    <div class="donate-method">
+      <h3>💰 USDT (TRC20)</h3>
+      <p id="usdt">TPAAtFKbti1xAvy7q547v4897m3qEBCLLe</p>
+      <button onclick="copyWallet('usdt')">Скопировать</button>
+    </div>
+    
+    <div class="donate-method">
+      <h3>💵TRX (Tron)</h3>
+      <p id="trx">TPAAtFKbti1xAvy7q547v4897m3qEBCLLe</p>
+      <button onclick="copyWallet('trx')">Скопировать</button>
+    </div>
+
+    <div class="donate-method">
+      <h3>🟡 Boosty</h3>
+      <a href="https://boosty.to/ТВОЙ_АККАУНТ" target="_blank">
+        Перейти
+      </a>
+    </div>
+
+  </div>
+</div>
+<script>
+const modal = document.getElementById("donateModal");
+const openBtn = document.getElementById("openDonate");
+const closeBtn = document.querySelector(".close");
+
+openBtn.onclick = function() {
+  modal.style.display = "block";
+}
+
+closeBtn.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(e) {
+  if (e.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+function copyWallet(id) {
+  const text = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(text);
+  alert("Скопировано");
+}
+</script>
 </body>
 </html>
