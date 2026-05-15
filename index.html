@@ -478,6 +478,22 @@ h1 {
   border: none;
   cursor: pointer;
 }
+.donate-method button,
+.donate-method a {
+  margin-top: 10px;
+  display: inline-block;
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #ff7a00;
+  color: black;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  font-size: 14px;
+}
   </style>
 </head>
 <head>
@@ -589,7 +605,7 @@ h1 {
 
     <span class="close">&times;</span>
 
-    <h2>Поддержать Бет Бомжа</h2>
+    <h2>Поддержи бомжа</h2>
 
     <div class="donate-method">
       <h3>💰 USDT</h3>
@@ -601,19 +617,17 @@ h1 {
     </div>
 
     <div class="donate-method">
-      <h3>💰 USDT (TRC20)</h3>
-      <p id="usdt">TPAAtFKbti1xAvy7q547v4897m3qEBCLLe</p>
-      <button onclick="copyWallet('usdt')">Скопировать</button>
+    <h3>💰 USDT</h3>
+      <p class="wallet-label">TRC20 (Tron)</p>
+
+      <button onclick="copyWallet('usdt')">Скопировать адрес</button>
+
+      <span id="usdt" style="display:none;">TPAAtFKbti1xAvy7q547v4897m3qEBCLLe</span>
     </div>
-    
-    <div class="donate-method">
-      <h3>💵TRX (Tron)</h3>
-      <p id="trx">TPAAtFKbti1xAvy7q547v4897m3qEBCLLe</p>
-      <button onclick="copyWallet('trx')">Скопировать</button>
-    </div>
+   
 
     <div class="donate-method">
-      <h3>🟡 Boosty</h3>
+      <h3>💳 Boosty</h3>
       <a href="https://boosty.to/ТВОЙ_АККАУНТ" target="_blank">
         Перейти
       </a>
@@ -643,7 +657,7 @@ window.onclick = function(e) {
 function copyWallet(id) {
   const text = document.getElementById(id).innerText;
   navigator.clipboard.writeText(text);
-  alert("Скопировано");
+  alert("Благодарочка братик!");
 }
 </script>
 </body>
