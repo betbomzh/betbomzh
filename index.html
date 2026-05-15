@@ -518,7 +518,6 @@ h1 {
 }
   </style>
 </head>
-<head>
 
 <body>
 
@@ -633,18 +632,18 @@ h1 {
       <h3>💰 USDT</h3>
       <p class="wallet-label">BEP20</p>
 
-      <button onclick="copyWallet('usdt')">Скопировать адрес</button>
+      <button onclick="copyWallet('usdt_bep20')">Скопировать адрес</button>
 
-      <span id="usdt" style="display:none;">0x3a02f143fe426ca151f3f6a5701734c8aa9c263f</span>
+      <span id="usdt_bep20" style="display:none;">0x3a02f143fe426ca151f3f6a5701734c8aa9c263f</span>
     </div>
 
     <div class="donate-method">
     <h3>💰 USDT</h3>
       <p class="wallet-label">TRC20 (Tron)</p>
 
-      <button onclick="copyWallet('usdt')">Скопировать адрес</button>
+      <button onclick="copyWallet('usdt_trc20')">Скопировать адрес</button>
 
-      <span id="usdt" style="display:none;">TPAAtFKbti1xAvy7q547v4897m3qEBCLLe</span>
+      <span id="usdt_trc20" style="display:none;">TPAAtFKbti1xAvy7q547v4897m3qEBCLLe</span>
     </div>
    
 
@@ -677,12 +676,15 @@ window.onclick = function(e) {
 }
 
 function copyWallet(id) {
-  const toast = document.getElementById("toast");
-toast.classList.add("show");
+  const text = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(text);
 
-setTimeout(() => {
-  toast.classList.remove("show");
-}, 1500);
+  const toast = document.getElementById("toast");
+  toast.classList.add("show");
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 1500);
 }
 </script>
 <div id="toast" class="toast">Скопировано! Дай Бог тебе здоровья! 😉</div>
