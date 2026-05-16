@@ -60,6 +60,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       display: flex;
       flex-direction: column;
       align-items: center;
+	  width: 100%;
       justify-content: flex-start;
       gap: 12px;
       text-align: center;
@@ -169,7 +170,8 @@ transform:translateY(-4px);
 }
 
     .donate {
-      background: #18110a;
+      width: 100%;
+	  background: #18110a;
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 24px;
       padding: 50px 30px;
@@ -208,8 +210,14 @@ transform:translateY(-4px);
     }
 
     .bookmakers {
-      margin: 30px 0;
-    }
+  width: 100%;
+  background: #18110a;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 24px;
+  padding: 50px 30px;
+  margin: 30px 0;
+  box-shadow: 0 0 40px rgba(255,215,0,0.08);
+}
 
     .section-title {
       text-align: center;
@@ -220,10 +228,16 @@ transform:translateY(-4px);
 
     .bk-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+	  grid-template-columns: repeat(3, 1fr);
       gap: 25px;
+      width: 100%;
     }
 
+     @media(max-width: 900px) {
+     .bk-grid {
+     grid-template-columns: 1fr;
+    }
+  }
     .bk-card {
       text-align: center;
       background: #141414;
@@ -233,6 +247,10 @@ transform:translateY(-4px);
       transition: 0.3s ease;
       position: relative;
       overflow: hidden;
+	  display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 260px;
     }
 
 
@@ -271,15 +289,22 @@ transform:translateY(-4px);
     }
 
     .bk-btn {
-      margin-top: 15px;
-	  display: inline-block;
-      padding: 12px 20px;
-      border-radius: 12px;
-      text-decoration: none;
-      background: #ff7a00;
-      color: black;
-      font-weight: 700;
-    }
+  margin-top: 15px;
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  background: linear-gradient(135deg,#ff7a00,#ff4500);
+  color: black;
+  font-weight: 800;
+  animation: glowPulse 1.4s infinite;
+  transition: 0.3s ease;
+}
+
+.bk-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255,215,0,0.5);
+}
 
     .quotes {
       margin: 100px 0;
@@ -516,6 +541,7 @@ h1 {
   opacity: 1;
   transform: translateX(-50%) translateY(-10px);
 }
+
   </style>
 </head>
 
@@ -591,24 +617,39 @@ h1 {
       <div class="bk-grid">
 
         <div class="bk-card">
-          <div class="bk-logo"></div>
-          <h3>Stake</h3>
-          <p>Лудоман approved.</p>
-          <a href="#" class="bk-btn">Грузим здесь</a>
-        </div>
+  <div class="bk-logo"></div>
+
+  <h3>1WIN</h3>
+
+  <p>✅ Лудоман approved.</p>
+  <p>🎁 Бонус 500%</p>
+  <p>⚡ Быстрые выплаты</p>
+
+  <a href="#" class="bk-btn">Грузим здесь</a>
+</div>
         <div class="bk-card">
-          <div class="bk-logo"></div>
-          <h3>1XBET</h3>
-          <p>Для красивых заносов.</p>
-          <a href="#" class="bk-btn">Залететь</a>
-        </div>
+  <div class="bk-logo"></div>
+
+  <h3>22BET</h3>
+
+  <p>✅ Для красивых заносов.</p>
+  <p>🔥 Бонус до 500%</p>
+  <p>💸 Вывод без нервов</p>
+
+  <a href="#" class="bk-btn">Залететь</a>
+</div>
 
         <div class="bk-card">
-          <div class="bk-logo"></div>
-          <h3>МЕЛБЕТ</h3>
-          <p>VIP тильт атмосфера.</p>
-          <a href="#" class="bk-btn">Войти в игру</a>
-        </div>
+  <div class="bk-logo"></div>
+
+  <h3>MOSTBET</h3>
+
+  <p>✅ VIP тильт атмосфера.</p>
+  <p>🚀 Моментальный старт</p>
+  <p>🎰 Для жёстких лудиков</p>
+
+  <a href="#" class="bk-btn">Войти в игру</a>
+</div>
 
       </div>
     </section>
