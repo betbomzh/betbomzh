@@ -1228,11 +1228,11 @@ const bookmakers = {
 
     {
       name: "1WIN",
-	  desc1: "✅ Лудоман approved",
+	  desc1: "✅ Лучшая БК",
       desc2: "🎁 Бонус 500%",
       desc3: "⚡ Быстрые выплаты",
-      link: "ТВОЯ_ССЫЛКА_1",
 	  button: "ПОГНАЛИ 🚀",
+      link: "https://w-one67225.com/v3/landing-page/football?p=bbg2",
       logo: "https://raw.githubusercontent.com/betbomzh/betbomzh/refs/heads/main/IMG_1722.png"
     },
 
@@ -1242,17 +1242,17 @@ const bookmakers = {
       desc2: "🔥 Бонус до 500%",
       desc3: "💸 Вывод без нервов",
 	  button: "ЗАБРАТЬ 🎁",
-      link: "ТВОЯ_ССЫЛКА_2",
+      link: "https://mqcfwa81cktwmst.com/7ZFU",
       logo: "https://raw.githubusercontent.com/betbomzh/betbomzh/refs/heads/main/IMG_1720.png"
     },
 
     {
       name: "MELBET",
-      desc1: "✅ VIP тильт атмосфера",
-      desc2: "🚀 Моментальный старт",
-      desc3: "🎰 Для жёстких лудиков",
+      desc1: "✅ VIP атмосфера",
+      desc2: "🚀 Бонусы новичкам",
+      desc3: "🎰 Топ казино",
 	  button: "ИГРАТЬ 🎯",
-      link: "ТВОЯ_ССЫЛКА_3",
+      link: "https://refpa47977.com/L?tag=s_5610463m_1107c_&site=5610463&ad=1107&r=registration",
       logo: "https://raw.githubusercontent.com/betbomzh/betbomzh/refs/heads/main/IMG_1721.png"
     }
 
@@ -1260,15 +1260,6 @@ const bookmakers = {
 
   UA: [
 
-    {
-      name: "STAWKI.BET",
-      desc1: "✅ Фрибет до 20000 грн",
-      desc2: "🎁 Бонус новичкам",
-      desc3: "⚡ Быстрые выплаты",
-	  button: "ФРИБЕТ ⚽️",
-      link: "https://trackmyaff.com/?serial=61350128&creative_id=7373",
-      logo: "https://raw.githubusercontent.com/betbomzh/betbomzh/refs/heads/main/IMG_1733.png"
-    },
 
     {
       name: "GGBET",
@@ -1282,9 +1273,9 @@ const bookmakers = {
 
     {
       name: "PARIK24",
-      desc1: "🔥 Киберспорт и казино.",
-      desc2: "🎰 Много бонусов",
-      desc3: "💸 Моментальный вывод",
+      desc1: "🔥 Бонус до 80 000 грн",
+      desc2: "🎰 150FS и фрибет",
+      desc3: "🔝 Топ линия",
 	  button: "ПОЛЕТЕЛИ 🚀",
       link: "https://trackmyaff.com/?serial=61350013&creative_id=7368",
       logo: "https://raw.githubusercontent.com/betbomzh/betbomzh/refs/heads/main/IMG_1735.png"
@@ -1292,15 +1283,50 @@ const bookmakers = {
 
     {
       name: "TOPMATCH",
-      desc1: "🚀 Ставки без тормозов.",
-      desc2: "🎁 Бонус новым игрокам",
-      desc3: "⚡ Хорошие коэффициенты",
+      desc1: "🚀 Фрибет 300 грн",
+      desc2: "🎁 150% к депозиту",
+      desc3: "⚡ Быстрые выплаты",
 	  button: "ЗАБИРАЙ 🏆",
       link: "https://trackmyaff.com/?serial=61350127&creative_id=7377",
       logo: "https://raw.githubusercontent.com/betbomzh/betbomzh/refs/heads/main/IMG_1736.png"
     }
 
-  ]
+  ],
+
+EU: [
+
+  {
+      name: "1WIN",
+	  desc1: "✅ Лучшая БК",
+      desc2: "🎁 Бонус 500%",
+      desc3: "⚡ Быстрые выплаты",
+	  button: "ПОГНАЛИ 🚀",
+      link: "https://w-one67225.com/v3/landing-page/football?p=bbg2",
+      logo: "https://raw.githubusercontent.com/betbomzh/betbomzh/refs/heads/main/IMG_1722.png"
+    },
+	
+	{
+      name: "STAWKI.BET",
+      desc1: "✅ Топ фрибеты",
+      desc2: "🎁 Бонусы новичкам",
+      desc3: "🥇 Отличная линия",
+	  button: "ФРИБЕТ ⚽️",
+      link: "https://trackmyaff.com/?serial=61350128&creative_id=7373",
+      logo: "https://raw.githubusercontent.com/betbomzh/betbomzh/refs/heads/main/IMG_1733.png"
+    },
+
+    {
+      name: "MOSTBET",
+      desc1: "✅ Для красивых заносов",
+      desc2: "🎁 Бонусы до 500%",
+      desc3: "💵 Выплаты без нервов",
+	  button: "ЗАЛЕТАЙ 🏆",
+      link: "https://mloz82mb.com/QEFU",
+      logo: "https://raw.githubusercontent.com/betbomzh/betbomzh/refs/heads/main/IMG_1720.png"
+    }
+
+]
+
 };
 
 async function loadBookmakers() {
@@ -1320,9 +1346,22 @@ async function loadBookmakers() {
 
   let selected = bookmakers.RU;
 
-  if (country === "UA") {
-    selected = bookmakers.UA;
-  }
+const europeCountries = [
+  "DE","FR","IT","ES","PL",
+  "NL","BE","SE","NO","DK",
+  "FI","AT","CH","PT","CZ",
+  "RO","HU","GR","IE"
+];
+
+if (country === "UA") {
+
+  selected = bookmakers.UA;
+
+} else if (europeCountries.includes(country)) {
+
+  selected = bookmakers.EU;
+
+}
 
   const container = document.getElementById("bk-container");
 
