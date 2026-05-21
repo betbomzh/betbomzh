@@ -135,10 +135,31 @@ border:1px solid rgba(255,255,255,.08);
 
 /* hover effects */
 
+.telegram{
+
+background:#ff7a00;
+
+box-shadow:
+0 0 18px rgba(255,122,0,.35);
+
+transform-style: preserve-3d;
+
+animation: tgCoin 3s ease-in-out infinite;
+
+transition:
+box-shadow .3s ease,
+transform .3s ease,
+background .3s ease;
+
+}
+
 .telegram:hover{
-background:#229ED9;
-box-shadow:0 0 20px rgba(34,158,217,.6);
-transform:translateY(-4px);
+
+box-shadow:
+0 0 28px rgba(34,158,217,.8);
+
+transform: translateY(-4px);
+
 }
 
 .youtube:hover{
@@ -996,7 +1017,74 @@ h1 {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
 }
+@keyframes tgCoin {
 
+0% {
+
+transform: rotateY(0deg);
+
+background:#ff7a00;
+
+box-shadow:
+0 0 18px rgba(255,122,0,.35);
+
+}
+
+10% {
+
+transform: rotateY(90deg);
+
+background:#229ED9;
+
+box-shadow:
+0 0 20px rgba(34,158,217,.45);
+
+}
+
+20% {
+
+transform: rotateY(180deg);
+
+background:#229ED9;
+
+box-shadow:
+0 0 20px rgba(34,158,217,.45);
+
+}
+
+30% {
+
+transform: rotateY(270deg);
+
+background:#ff7a00;
+
+box-shadow:
+0 0 18px rgba(255,122,0,.35);
+
+}
+
+40% {
+
+transform: rotateY(360deg);
+
+background:#ff7a00;
+
+box-shadow:
+0 0 18px rgba(255,122,0,.35);
+
+}
+
+100% {
+
+transform: rotateY(360deg);
+
+background:#ff7a00;
+
+box-shadow:
+0 0 18px rgba(255,122,0,.35);
+
+
+}
 </style>
 </head>
 
